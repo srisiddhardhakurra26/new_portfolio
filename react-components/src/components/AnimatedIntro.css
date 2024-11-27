@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.intro-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  background: linear-gradient(45deg, #a69907, #e9e61c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.animated-name span {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.animated-role {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.intro-description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+  text-align: center;
+}
+
+.yellow-path {
+  pointer-events: none;
+}
