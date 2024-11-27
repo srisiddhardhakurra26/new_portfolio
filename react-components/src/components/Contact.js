@@ -28,13 +28,15 @@ const Contact = () => {
       { threshold: 0.1 }
     );
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
+    const currentRef = contactRef.current; // Store ref in a variable
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (contactRef.current) {
-        observer.unobserve(contactRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

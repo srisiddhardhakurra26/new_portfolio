@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
-import YellowPath from './YellowPath';
 
 const PieSlice = ({ startAngle, endAngle, color, label }) => {
   const meshRef = useRef();
