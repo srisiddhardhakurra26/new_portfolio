@@ -68,7 +68,7 @@ const Contact = () => {
           >
             <item.icon className="icon" />
             {item.link ? (
-              <a href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>
+              <a href={item.link} className="text-white hover:text-yellow-300 no-underline" target="_blank" rel="noopener noreferrer">{item.text}</a>
             ) : (
               <span>{item.text}</span>
             )}
