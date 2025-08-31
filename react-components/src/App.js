@@ -4,7 +4,7 @@ import AboutSection from './components/AboutSection';
 import SkillsPieChart from './components/SkillsPieChart';
 import AnimatedIntro from './components/AnimatedIntro';
 import SkillShowcase from './components/SkillShowcase';
-// import ParticleBackground from './components/ParticleBackground';
+import ParticleBackground from './components/ParticleBackground';
 import Resume from './components/Resume.js';
 import Contact from './components/Contact.js';
 import ProjectsSection from './components/ProjectsSection.js';
@@ -66,98 +66,35 @@ function App() {
               <li className="nav-item"><a className="nav-link" href="#resume">Resume</a></li>
               <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
               <li className="nav-item"><a className="nav-link" href="https://sid-kurra.hashnode.dev/newsletter">Blog</a></li>
-
             </ul>
           </div>
         </div>
       </nav>
 
       <section id="home" className="section">
-        {/* <ParticleBackground /> */}
-        <div className="container">
-          <AnimatedIntro />
-        </div>
+        <AnimatedIntro />
       </section>
 
       <section id="about" className="section">
-        <div className="container">
-          <AboutSection />
-        </div>
+        <AboutSection />
+      </section>
+
+      <section id="skills-distribution" className="section" style={{
+        padding: 0,
+        margin: 0,
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <SkillsPieChart />
       </section>
 
       <section id="skills-distribution" className="section">
-        <div className="container">
-          <SkillsPieChart />
-        </div>
+        <ProjectsSection/>
       </section>
-
-      <section id="skills-distribution" className="section">
-        <div className="container">
-          <ProjectsSection/>
-        </div>
-      </section>
-
-      {/* <section id="projects" className="section">
-        <div className="container">
-          <h2>My Projects</h2>
-          <ul className="list-unstyled">
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-          </ul>
-        </div>
-      </section> */}
-
-      {/* <section id="skills" className="section">
-        <div className="container">
-          <h2 className="section-title">My Skills</h2>
-          <div className="row">
-          <div className="col-md-4">
-              <div className="skill-item text-center">
-                <i className="fab fa-java skill-icon"></i>
-                <h3 className="skill-title">Java</h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item text-center">
-                <img src="images/spring-logo.png" alt="Spring logo" className="skill-icon" style={{width: '48px', height: '48px'}} />
-                <h3 className="skill-title">Spring</h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item text-center">
-                <i className="fab fa-react skill-icon"></i>
-                <h3 className="skill-title">React</h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item text-center">
-                <i className="fas fa-database skill-icon"></i>
-                <h3 className="skill-title">MongoDB</h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item text-center">
-                <i className="fab fa-aws skill-icon"></i>
-                <h3 className="skill-title">AWS</h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item text-center">
-                <i className="fab fa-git-alt skill-icon"></i>
-                <h3 className="skill-title">Git</h3>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-item text-center">
-                <i className="fab fa-docker skill-icon"></i>
-                <h3 className="skill-title">Docker</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
+      
       <section id="skills" className="section mb-5">
         <div className="container">
           <SkillShowcase/>

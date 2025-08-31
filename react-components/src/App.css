@@ -1,6 +1,10 @@
-/* General App Styles */
 .App {
   text-align: center;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  color: #e0e0e0;
 }
 
 .App-logo {
@@ -45,17 +49,41 @@ body {
   padding: 0;
 }
 
+/* Section Styles */
 .section {
   min-height: 100vh;
+  width: 100vw;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-.section.active {
-  opacity: 1;
+#home {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#home .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 /* Navbar Styles */
@@ -63,88 +91,171 @@ body {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(51, 51, 51, 0.8);
-  transition: background-color 0.3s ease;
+  background-color: rgba(26, 26, 26, 0.9) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand, .nav-link {
-  color: #fff !important;
+  color: #e0e0e0 !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+  color: #FFD700 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .navbar-brand .highlight {
-  color: #FFD700;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
 
+/* Skills Section */
 #skills {
-  background-color: #f4eb9c;
-  padding: 40px 20px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .skill-showcase {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-showcase .section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, #B8860B, #FFD700, #FFFF00, #FFF8DC, #FFD700, #DAA520);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
 }
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .skill-item {
-  background-color: #d2e4ef;
-  border-radius: 10px;
-  padding: 20px;
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .skill-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.skill-item:hover::before {
+  opacity: 1;
 }
 
 .skill-icon {
-  font-size: 48px;
-  margin-bottom: 15px;
-  color: #7b762a;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #FFD700;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-item:hover .skill-icon {
+  color: #FFFF00;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  transform: scale(1.1);
 }
 
 .skill-title {
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
 }
 
-.skill-details {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.skill-bar {
-  height: 20px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.skill-progress {
-  height: 100%;
-  background-color: #7b762a;
-  border-radius: 10px;
+.skill-item:hover .skill-title {
+  color: #FFD700;
 }
 
 @media (max-width: 768px) {
   .skill-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skill-showcase {
+    padding: 1rem;
+  }
+  
+  .skill-showcase .section-title {
+    font-size: 2rem;
+  }
+  
+  .skill-item {
+    padding: 1.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 2.5rem;
   }
 }
 
@@ -178,21 +289,49 @@ body {
 }
 
 .projects-section {
-  background-color: #fffbe6;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  width: 100vw;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .projects-inner-container {
-  background-color: #fff9db;
-  border: 2px solid #ffd700;
-  border-radius: 12px;
-  padding: 2rem;
-  max-width: 1000px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 1rem;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projects-inner-container {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
@@ -271,4 +410,119 @@ body {
 
 .download-buttons-container > * + * {
   margin-left: 1rem;
+}
+
+/* Resume Section Styling */
+#resume {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#resume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#resume h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, #B8860B, #FFD700, #FFFF00, #FFF8DC, #FFD700, #DAA520);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+#resume .container {
+  position: relative;
+  z-index: 1;
+}
+
+.resume-container {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style the resume content */
+.resume-container p,
+.resume-container h1,
+.resume-container h2,
+.resume-container h3,
+.resume-container div {
+  color: #e0e0e0 !important;
+}
+
+.resume-container .ft10,
+.resume-container .ft11 {
+  background: linear-gradient(45deg, #B8860B, #FFD700, #FFFF00);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: bold !important;
+}
+
+.resume-container .ft12,
+.resume-container .ft13,
+.resume-container .ft16,
+.resume-container .ft17,
+.resume-container .ft18,
+.resume-container .ft20,
+.resume-container .ft23 {
+  color: #e0e0e0 !important;
+}
+
+.resume-container .ft14 a {
+  color: #FFD700 !important;
+  text-decoration: none;
+}
+
+.resume-container .ft14 a:hover {
+  color: #FFFF00 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Style section headers in resume */
+.resume-container p:contains("SUMMARY"),
+.resume-container p:contains("PROFESSIONAL EXPERIENCE"),
+.resume-container p:contains("EDUCATION"),
+.resume-container p:contains("TECHNICAL SKILLS"),
+.resume-container p:contains("PROJECTS") {
+  background: linear-gradient(45deg, #B8860B, #FFD700, #FFFF00) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: bold !important;
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  #resume h2 {
+    font-size: 2rem;
+  }
 }

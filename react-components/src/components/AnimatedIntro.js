@@ -9,8 +9,8 @@ const AnimatedIntro = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       className="intro-container"
     >
@@ -34,14 +34,27 @@ const AnimatedIntro = () => {
                 }
               }
             }}
-            whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.2 } }}
+            whileHover={{ 
+              scale: 1.2, 
+              rotate: 10, 
+              transition: { duration: 0.2 },
+              color: "#FF6B6B"
+            }}
           >
             {letter === " " ? "\u00A0" : letter}
           </motion.span>
         ))}
       </h1>
 
-      <h3 className="animated-role">
+      <motion.h2 
+        className="animated-role"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.8,
+          delay: nameArray.length * 0.1 + 0.5
+        }}
+      >
         {roleArray.map((letter, index) => (
           <motion.span
             key={index}
@@ -51,23 +64,18 @@ const AnimatedIntro = () => {
               y: 0,
               transition: {
                 duration: 0.5,
-                delay: nameArray.length * 0.1 + index * 0.05
+                delay: nameArray.length * 0.1 + 0.5 + index * 0.05
               }
+            }}
+            whileHover={{ 
+              scale: 1.1,
+              transition: { duration: 0.2 }
             }}
           >
             {letter}
           </motion.span>
         ))}
-      </h3>
-
-      <motion.p
-        className="intro-description"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: nameArray.length * 0.1 + roleArray.length * 0.05 + 0.5, duration: 0.8 }}
-      >
-        Passionate about delivering user-friendly solutions and driving projects from concept to deployment.
-      </motion.p>
+      </motion.h2>
       
       <YellowPath bottom="5%" />
     </motion.div>

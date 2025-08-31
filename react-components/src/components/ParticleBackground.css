@@ -4,15 +4,17 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 1;
+    pointer-events: none;
 }
 
 #home {
     position: relative;
     overflow: hidden;
+    background: transparent;
 }
 
 .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }

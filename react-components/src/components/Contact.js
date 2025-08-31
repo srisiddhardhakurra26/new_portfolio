@@ -9,9 +9,9 @@ const Contact = () => {
   const contactRef = useRef(null);
 
   const contactItems = [
-    { icon: FaMapMarkerAlt, text: 'New York City, NY - Remote', link: null },
+    { icon: FaMapMarkerAlt, text: 'Mountain View, CA', link: null },
     { icon: FaEnvelope, text: 'srisiddhardhak@gmail.com', link: 'mailto:srisiddhardhak@gmail.com' },
-    { icon: FaPhoneAlt, text: '(862) 800-6461', link: null },
+    { icon: FaPhoneAlt, text: '(973) 687-4206', link: null },
     { icon: FaLinkedin, text: 'LinkedIn', link: 'https://www.linkedin.com/in/sid-k-339962319/' },
     { icon: FaGithub, text: 'GitHub', link: 'https://github.com/srisiddhardhakurra26' },
     { icon: FaBlog, text: 'Blog', link: 'https://sid-kurra.hashnode.dev/newsletter' },
