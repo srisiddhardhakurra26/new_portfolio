@@ -516,7 +516,7 @@ body {
   font-weight: bold !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .resume-container {
     padding: 1rem;
     margin: 1rem;

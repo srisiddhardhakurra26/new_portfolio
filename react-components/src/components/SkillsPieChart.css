@@ -28,15 +28,19 @@
 }
 
 @media (max-width: 768px) {
+  .skills-pie-chart {
+    padding: 1rem !important;
+  }
+  
   .circular-progress-container {
-    margin: 0.5rem !important;
-    width: 180px !important;
-    min-width: 180px !important;
+    margin: 1rem 0.5rem !important;
+    width: 160px !important;
+    min-width: 160px !important;
   }
   
   .circular-progress-container > div:first-child {
-    width: 150px !important;
-    height: 150px !important;
+    width: 140px !important;
+    height: 140px !important;
   }
   
   .progress-label {
@@ -46,29 +50,43 @@
   }
   
   .circular-progress-container svg {
-    width: 150px !important;
-    height: 150px !important;
+    width: 140px !important;
+    height: 140px !important;
   }
   
   .circular-progress-container div[style*="fontSize: '2rem'"] {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
+  }
+  
+  /* Center the progress circles container on mobile */
+  div[style*="gap: 3rem"] {
+    gap: 2rem !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
   }
 }
 
 @media (max-width: 480px) {
+  .skills-pie-chart {
+    padding: 0.5rem !important;
+  }
+  
   .circular-progress-container {
-    width: 150px !important;
-    min-width: 150px !important;
+    width: 140px !important;
+    min-width: 140px !important;
+    margin: 0.5rem !important;
   }
   
   .circular-progress-container > div:first-child {
-    width: 120px !important;
-    height: 120px !important;
+    width: 110px !important;
+    height: 110px !important;
   }
   
   .circular-progress-container svg {
-    width: 120px !important;
-    height: 120px !important;
+    width: 110px !important;
+    height: 110px !important;
   }
   
   .circular-progress-container div[style*="fontSize: '2rem'"] {
@@ -76,7 +94,22 @@
   }
   
   .progress-label {
-    font-size: 1rem !important;
+    font-size: 0.95rem !important;
     min-height: 1.8rem !important;
+    margin-top: 0.8rem !important;
+  }
+  
+  /* Stack vertically on small screens */
+  div[style*="gap: 3rem"] {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Adjust title size on mobile */
+  h2[style*="font-size: 2.5rem"] {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
   }
 }
