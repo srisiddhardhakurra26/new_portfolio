@@ -113,9 +113,9 @@
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .animated-name {
-    font-size: 3rem;
+    font-size: 8vw;
   }
 
   .animated-role {

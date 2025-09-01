@@ -505,6 +505,7 @@ body {
 }
 
 /* Style section headers in resume */
+.resume-container p:contains("SRI SIDDHARDHA KURRA"),
 .resume-container p:contains("SUMMARY"),
 .resume-container p:contains("PROFESSIONAL EXPERIENCE"),
 .resume-container p:contains("EDUCATION"),
