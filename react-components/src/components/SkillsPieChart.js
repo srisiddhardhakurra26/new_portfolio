@@ -1,10 +1,11 @@
 import React from 'react';
-import LuxuryPieChart from './LuxuryPieChart';
+import AnimatedProgressCircles from './AnimatedProgressCircles';
+import './SkillsPieChart.css';
 
 const SkillsPieChart = () => {
   const skillData = [
-    { name: 'Backend Developer', value: 0.6, color: '#fff9c4' },  // Yellow
-    { name: 'Frontend Developer', value: 0.4, color: '#f9fbe7' }  // Light green
+    { name: 'Backend Developer', value: 0.6, color: '#FFD700' },
+    { name: 'Frontend Developer', value: 0.4, color: '#B8860B' }
   ];
 
   return (
@@ -16,23 +17,38 @@ const SkillsPieChart = () => {
       justifyContent: 'center',
       alignItems: 'center',
       padding: '2rem',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      background: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
-      <h2 className="text-3xl font-bold mb-6 text-center">I'm a</h2>
-      <div 
-        className="pie-chart-container" 
-        style={{ 
-          width: '100%',
-          maxWidth: '600px', // Reduced from 800px to ensure it fits
-          height: '500px', // Set explicit height
-          margin: '0 auto',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          overflow: 'visible' // Allow chart to show fully
-        }}
-      >
-        <LuxuryPieChart data={skillData} />
+      {/* Background pattern */}
+      <div style={{
+        content: '',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: `
+          radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%)
+        `,
+        pointerEvents: 'none',
+        zIndex: 0
+      }} />
+      
+      <div style={{ 
+        position: 'relative',
+        zIndex: 1,
+        width: '100%',
+        maxWidth: '800px',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+        <AnimatedProgressCircles data={skillData} />
       </div>
     </div>
   );

@@ -115,7 +115,7 @@
 
 @media (max-width: 480px) {
   .animated-name {
-    font-size: 8vw;
+    font-size: 1.8rem;
   }
 
   .animated-role {
@@ -126,15 +126,5 @@
     font-size: 1.1rem;
     padding: 1.5rem;
     margin: 0 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .animated-name {
-    font-size: 2.5rem;
-  }
-  
-  .animated-role {
-    font-size: 1.5rem;
   }
 }

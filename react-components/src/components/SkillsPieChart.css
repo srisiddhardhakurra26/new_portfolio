@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.progress-label {
+  margin-top: 1.5rem !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  background: linear-gradient(45deg, #B8860B, #FFD700, #FFFF00, #FFF8DC, #FFD700, #DAA520) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
+  font-family: 'Poppins', sans-serif !important;
+  letter-spacing: 0.5px !important;
+  min-height: 2.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.circular-progress-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin: 1rem !important;
+  min-width: 200px !important;
+  width: 220px !important;
+}
+
+@media (max-width: 768px) {
+  .circular-progress-container {
+    margin: 0.5rem !important;
+    width: 180px !important;
+    min-width: 180px !important;
+  }
+  
+  .circular-progress-container > div:first-child {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .progress-label {
+    font-size: 1.1rem !important;
+    margin-top: 1rem !important;
+    min-height: 2rem !important;
+  }
+  
+  .circular-progress-container svg {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .circular-progress-container div[style*="fontSize: '2rem'"] {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .circular-progress-container {
+    width: 150px !important;
+    min-width: 150px !important;
+  }
+  
+  .circular-progress-container > div:first-child {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .circular-progress-container svg {
+    width: 120px !important;
+    height: 120px !important;
+  }
+  
+  .circular-progress-container div[style*="fontSize: '2rem'"] {
+    font-size: 1.2rem !important;
+  }
+  
+  .progress-label {
+    font-size: 1rem !important;
+    min-height: 1.8rem !important;
+  }
+}

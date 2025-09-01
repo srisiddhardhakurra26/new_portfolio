@@ -67,7 +67,7 @@ const AboutSection = () => {
           className="about-text"
           variants={itemVariants}
         >
-          Software Engineer with 3+ years of experience in developing high-performance applications in finance and healthcare. Proficient in Java, Python, and SQL, with expertise in frameworks like Spring Boot and Django. Skilled in RESTful APIs, database management, and cloud services (AWS, Azure). Adept at containerization with Docker and real-time data processing using Apache Kafka.
+          Software Engineer with 3+ years of experience in designing, developing, and deploying high-performance applications in AI/ML, enterprise AI, finance, and healthcare sectors. Proficient in Python, JavaScript, TypeScript, Java, and SQL, with expertise in frameworks like Spring Boot, FastAPI, React, and LangGraph. Skilled in designing RAG pipelines, Agentic AI systems, database management (PostgreSQL, MongoDB, Oracle), and cloud services (AWS, Azure). Adept at containerization with Docker, real-time data processing using Apache Kafka, and implementing AI workflows for intelligent query processing. Passionate about collaborating with cross-functional teams to deliver user-friendly solutions, optimize system performance, and drive AI/ML projects from concept to deployment.
         </motion.p>
 
         <motion.h3 
@@ -82,7 +82,7 @@ const AboutSection = () => {
           variants={containerVariants}
         >
           <motion.li variants={itemVariants}>
-            🚀 Developed robust applications using Java and Spring Boot, ensuring data integrity and scalability in healthcare and financial systems.
+            🚀 Contributed to the development of an Agentic GenAI system at C3.ai using RAG pipelines, enhancing response accuracy for enterprise applications.
           </motion.li>
           <motion.li variants={itemVariants}>
             💻 Created responsive and dynamic front-end interfaces with React.js, enhancing user experience in financial and healthcare sectors.
@@ -100,7 +100,7 @@ const AboutSection = () => {
             🔄 Collaborated within Agile frameworks, ensuring timely delivery and continuous improvement of software solutions.
           </motion.li>
           <motion.li variants={itemVariants}>
-            🌐 Built and deployed the "Quotivation Station" project using the MERN tech stack, showcasing full-stack development expertise.
+            🧪 Conducted comprehensive QA testing and automated unit tests at C3.ai, identifying issues and enabling on-time releases.
           </motion.li>
         </motion.ul>
       </motion.div>
