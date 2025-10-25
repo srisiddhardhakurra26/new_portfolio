@@ -37,8 +37,11 @@ const ChatPanel = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
+      // Use environment variable for API URL (falls back to localhost for dev)
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      
       // Call API endpoint
-      const response = await fetch('http://localhost:3001/api/chat', {
+      const response = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
