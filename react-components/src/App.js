@@ -9,9 +9,11 @@ import Resume from './components/Resume.js';
 import Contact from './components/Contact.js';
 import ProjectsSection from './components/ProjectsSection.js';
 import DownloadButtons from './components/StylishButton.js';
+import ChatPanel from './components/AIChat/ChatPanel';
 
 function App() {
   const [resumeContent, setResumeContent] = useState('');
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     // Fetch the HTML resume content
@@ -122,6 +124,27 @@ function App() {
           <Contact />
         </div>
       </section>
+
+      {/* AI Chat Toggle Button */}
+      <button 
+        className="chat-toggle-btn"
+        onClick={() => setIsChatOpen(true)}
+        aria-label="Open AI Chat"
+      >
+        <svg 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2"
+        >
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </button>
+
+      {/* AI Chat Panel */}
+      <ChatPanel isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </div>
   );
 }
