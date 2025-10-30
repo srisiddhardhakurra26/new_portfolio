@@ -37,11 +37,11 @@ const ChatPanel = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      // Use environment variable for API URL (falls back to localhost for dev)
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+  // Prefer env-driven base URL; fallback to Vercel so dev uses deployed backend
+  const API_URL = (process.env.REACT_APP_API_URL || '').trim() || 'https://sid-portfolio-api.vercel.app';
       
       // Call API endpoint
-      const response = await fetch(`${API_URL}/api/chat`, {
+  const response = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,6 +53,11 @@ const ChatPanel = ({ isOpen, onClose }) => {
           }))
         })
       });
+
+      if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`API ${response.status}: ${errText.slice(0, 200)}`);
+      }
 
       const data = await response.json();
 
