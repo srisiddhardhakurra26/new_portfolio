@@ -1,0 +1,66 @@
+/* Floating chat bubble trigger with gold theme and subtle pulse */
+.chat-bubble-trigger {
+  position: relative;
+  z-index: 3;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  background: radial-gradient(circle at 30% 30%, #fff6a3, #ffd700 40%, #ffcc00 70%, #b08d00 100%);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.35), 0 0 0 4px rgba(255, 215, 0, 0.08) inset;
+  transition: filter 0.2s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  will-change: transform;
+  animation: bubblePulse 2.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.chat-bubble-trigger:hover {
+  filter: brightness(1.15) saturate(1.15);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.7), 
+              0 0 100px rgba(255, 215, 0, 0.5),
+              0 0 150px rgba(255, 215, 0, 0.3),
+              0 0 0 8px rgba(255, 215, 0, 0.2) inset;
+  animation: none;
+}
+
+.chat-bubble-icon {
+  pointer-events: none;
+}
+
+@keyframes bubblePulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.35), 0 0 0 4px rgba(255, 215, 0, 0.08) inset;
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.55), 0 0 0 6px rgba(255, 215, 0, 0.12) inset;
+  }
+}
+
+/* Circular reveal overlay */
+.chat-reveal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998; /* below panel backdrop is also 9998; we fade out quickly */
+  pointer-events: none;
+}
+
+.chat-reveal-circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, rgba(255, 238, 130, 0.95), rgba(255, 215, 0, 0.9) 40%, rgba(255, 204, 0, 0.85) 65%, rgba(26, 26, 26, 0.6) 100%);
+  box-shadow: 0 0 0 12px rgba(255, 215, 0, 0.2), 0 0 120px rgba(255, 215, 0, 0.35);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .chat-bubble-trigger {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}

@@ -91,6 +91,22 @@
   }
 }
 
+.chat-trigger-region {
+  margin-top: clamp(2.5rem, 5vw, 5rem);
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .chat-trigger-region {
+    margin-top: 2rem;
+  }
+}
+
 .intro-description {
   font-size: 1.3rem;
   max-width: 700px;
@@ -120,6 +136,10 @@
 
   .animated-role {
     font-size: 1.8rem;
+  }
+  
+  .chat-trigger-region {
+    margin-top: 1.5rem;
   }
   
   .intro-description {

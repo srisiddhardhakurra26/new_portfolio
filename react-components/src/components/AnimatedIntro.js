@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import YellowPath from './YellowPath';
 import './AnimatedIntro.css'; // Make sure this file contains the updated CSS
 
-const AnimatedIntro = () => {
+const AnimatedIntro = ({ chatTrigger }) => {
   const nameArray = "Sri Siddhardha Kurra".split("");
   const roleArray = "Software Engineer".split("");
 
@@ -76,6 +76,12 @@ const AnimatedIntro = () => {
           </motion.span>
         ))}
       </motion.h2>
+
+      {chatTrigger && (
+        <div className="chat-trigger-region">
+          {chatTrigger}
+        </div>
+      )}
       
       <YellowPath bottom="5%" />
     </motion.div>
