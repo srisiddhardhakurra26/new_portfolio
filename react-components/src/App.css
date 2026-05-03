@@ -198,9 +198,9 @@ body {
 }
 
 .skill-item:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 215, 0, 0.4);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.1);
+  transform: translateY(-10px) scale(1.03);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.15);
 }
 
 .skill-item:hover::before {
@@ -527,7 +527,51 @@ body {
   }
 }
 
-/* AI Chat Toggle Button */
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #B8860B, #FFD700, #FFFF00, #FFD700, #B8860B);
+  background-size: 200% 100%;
+  animation: shimmer-bar 3s linear infinite;
+  z-index: 10000;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.7), 0 0 24px rgba(255, 215, 0, 0.3);
+  transition: width 0.08s linear;
+  pointer-events: none;
+  border-radius: 0 2px 2px 0;
+}
+
+@keyframes shimmer-bar {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* ===== ENHANCED NAVBAR ===== */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD700, #FFFF00);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* ===== AI Chat Toggle Button ===== */
 .chat-toggle-btn {
   position: fixed;
   bottom: 30px;

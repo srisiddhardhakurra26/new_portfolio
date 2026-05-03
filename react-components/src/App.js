@@ -15,6 +15,7 @@ import ChatTriggerBubble from './components/AIChat/ChatTriggerBubble';
 function App() {
   const [resumeContent, setResumeContent] = useState('');
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     // Fetch the HTML resume content
@@ -24,6 +25,10 @@ function App() {
       .catch(error => console.error('Error loading resume:', error));
 
     function handleScroll() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      setScrollProgress(progress);
+
       const sections = document.querySelectorAll('.section');
       const scrollPosition = window.scrollY;
 
@@ -54,6 +59,12 @@ function App() {
 
   return (
     <div className="App">
+      {/* Golden scroll progress bar */}
+      <div
+        className="scroll-progress-bar"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
           <a className="navbar-brand" href="/"><span className="highlight">Sid</span> Kurra</a>

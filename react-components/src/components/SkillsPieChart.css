@@ -1,115 +1,241 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
-.progress-label {
-  margin-top: 1.5rem !important;
-  font-size: 1.3rem !important;
-  font-weight: 700 !important;
-  text-align: center !important;
-  background: linear-gradient(45deg, #B8860B, #FFD700, #FFFF00, #FFF8DC, #FFD700, #DAA520) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
-  font-family: 'Poppins', sans-serif !important;
-  letter-spacing: 0.5px !important;
-  min-height: 2.5rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+/* ===== EXPERTISE SECTION ===== */
+
+.expertise-container {
+  width: 100%;
+  max-width: 960px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
 }
 
-.circular-progress-container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  margin: 1rem !important;
-  min-width: 200px !important;
-  width: 220px !important;
+.expertise-heading-wrap {
+  position: relative;
+  text-align: center;
 }
+
+.expertise-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #B8860B, #FFD700, #FFFF00, #FFF8DC, #FFD700, #DAA520);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-heading-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 70px;
+  background: radial-gradient(ellipse, rgba(255, 215, 0, 0.18), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== COMPOSITION BAR ===== */
+
+.composition-bar-outer {
+  width: 100%;
+  max-width: 820px;
+}
+
+.composition-bar-track {
+  display: flex;
+  height: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.14);
+  gap: 3px;
+  padding: 2px;
+}
+
+.composition-segment {
+  height: 100%;
+  border-radius: 5px;
+  min-width: 0;
+}
+
+.composition-bar-labels {
+  display: flex;
+  margin-top: 0.65rem;
+}
+
+.comp-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ===== ROLE CARDS ===== */
+
+.role-cards-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.role-card {
+  flex: 1;
+  min-width: 230px;
+  max-width: 280px;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+  padding: 2rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.role-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.04), transparent 60%);
+  pointer-events: none;
+}
+
+.role-card:hover {
+  border-color: rgba(255, 215, 0, 0.32);
+  background: rgba(24, 24, 24, 0.98);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65), 0 0 40px rgba(255, 215, 0, 0.08);
+}
+
+.role-card-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 22px 22px 0 0;
+}
+
+.role-card-icon-wrap {
+  width: 62px;
+  height: 62px;
+  border-radius: 15px;
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px solid rgba(255, 215, 0, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.role-card:hover .role-card-icon-wrap {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.role-card-icon {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.role-card-pct {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.role-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.role-card-skills {
+  font-size: 0.73rem;
+  color: rgba(200, 200, 200, 0.5);
+  text-align: center;
+  margin: 0;
+  line-height: 1.65;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.role-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 215, 0, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.8rem;
+}
+
+.role-progress-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
-  .skills-pie-chart {
-    padding: 1rem !important;
+  .expertise-container {
+    padding: 2rem 1rem;
+    gap: 2rem;
   }
-  
-  .circular-progress-container {
-    margin: 1rem 0.5rem !important;
-    width: 160px !important;
-    min-width: 160px !important;
+
+  .role-cards-row {
+    gap: 1rem;
   }
-  
-  .circular-progress-container > div:first-child {
-    width: 140px !important;
-    height: 140px !important;
+
+  .role-card {
+    min-width: 200px;
+    padding: 1.5rem 1rem 1rem;
   }
-  
-  .progress-label {
-    font-size: 1.1rem !important;
-    margin-top: 1rem !important;
-    min-height: 2rem !important;
-  }
-  
-  .circular-progress-container svg {
-    width: 140px !important;
-    height: 140px !important;
-  }
-  
-  .circular-progress-container div[style*="fontSize: '2rem'"] {
-    font-size: 1.4rem !important;
-  }
-  
-  /* Center the progress circles container on mobile */
-  div[style*="gap: 3rem"] {
-    gap: 2rem !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
+
+  .expertise-heading {
+    font-size: 2.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .skills-pie-chart {
-    padding: 0.5rem !important;
+  .role-cards-row {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .circular-progress-container {
-    width: 140px !important;
-    min-width: 140px !important;
-    margin: 0.5rem !important;
+
+  .role-card {
+    width: 100%;
+    max-width: 340px;
+    min-width: unset;
   }
-  
-  .circular-progress-container > div:first-child {
-    width: 110px !important;
-    height: 110px !important;
+
+  .expertise-heading {
+    font-size: 2.2rem;
   }
-  
-  .circular-progress-container svg {
-    width: 110px !important;
-    height: 110px !important;
-  }
-  
-  .circular-progress-container div[style*="fontSize: '2rem'"] {
-    font-size: 1.2rem !important;
-  }
-  
-  .progress-label {
-    font-size: 0.95rem !important;
-    min-height: 1.8rem !important;
-    margin-top: 0.8rem !important;
-  }
-  
-  /* Stack vertically on small screens */
-  div[style*="gap: 3rem"] {
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-  
-  /* Adjust title size on mobile */
-  h2[style*="font-size: 2.5rem"] {
-    font-size: 2rem !important;
-    margin-bottom: 2rem !important;
+
+  .role-card-pct {
+    font-size: 2.3rem;
   }
 }

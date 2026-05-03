@@ -1,11 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import YellowPath from './YellowPath';
-import './AnimatedIntro.css'; // Make sure this file contains the updated CSS
+import './AnimatedIntro.css';
+
+const CYCLING_ROLES = [
+  "Full Stack AI & Data Engineer",
+  "GenAI Systems Architect",
+  "Databricks & Cloud Expert",
+  "Data Pipeline Engineer",
+];
 
 const AnimatedIntro = ({ chatTrigger }) => {
   const nameArray = "Sri Siddhardha Kurra".split("");
-  const roleArray = "Software Engineer".split("");
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRoleIndex(prev => (prev + 1) % CYCLING_ROLES.length);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <motion.div
@@ -19,70 +33,100 @@ const AnimatedIntro = ({ chatTrigger }) => {
           <motion.span
             key={index}
             initial={{ opacity: 0, y: 50 }}
-            animate={{ 
-              opacity: 1, 
-              y: 0,
-              transition: {
-                duration: 0.5,
-                delay: index * 0.1,
-                y: {
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                  y: [-2, 0, 2]
-                }
-              }
-            }}
-            whileHover={{ 
-              scale: 1.2, 
-              rotate: 10, 
-              transition: { duration: 0.2 },
-              color: "#FF6B6B"
-            }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.07 }}
+            whileHover={{ scale: 1.2, rotate: 10, transition: { duration: 0.2 } }}
           >
-            {letter === " " ? "\u00A0" : letter}
+            {letter === " " ? " " : letter}
           </motion.span>
         ))}
       </h1>
 
-      <motion.h2 
-        className="animated-role"
+      {/* Cycling role with AnimatePresence */}
+      <div className="role-cycling-wrapper">
+        <AnimatePresence mode="wait">
+          <motion.h2
+            key={roleIndex}
+            className="animated-role"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 0.92, y: 0 }}
+            exit={{ opacity: 0, y: -18 }}
+            transition={{ duration: 0.45, ease: 'easeInOut' }}
+          >
+            {CYCLING_ROLES[roleIndex]}
+          </motion.h2>
+        </AnimatePresence>
+      </div>
+
+      {/* Stats pills */}
+      <motion.div
+        className="stats-row"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ 
-          duration: 0.8,
-          delay: nameArray.length * 0.1 + 0.5
-        }}
+        transition={{ delay: 1.8, duration: 0.6 }}
       >
-        {roleArray.map((letter, index) => (
-          <motion.span
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ 
-              opacity: 1, 
-              y: 0,
-              transition: {
-                duration: 0.5,
-                delay: nameArray.length * 0.1 + 0.5 + index * 0.05
-              }
-            }}
-            whileHover={{ 
-              scale: 1.1,
-              transition: { duration: 0.2 }
-            }}
-          >
-            {letter}
-          </motion.span>
-        ))}
-      </motion.h2>
+        <div className="stat-pill">~5 yrs experience</div>
+        <div className="stat-divider">·</div>
+        <div className="stat-pill">20+ AI apps deployed</div>
+        <div className="stat-divider">·</div>
+        <div className="stat-pill">8 companies</div>
+      </motion.div>
+
+      {/* Social links */}
+      <motion.div
+        className="social-links-row"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.1, duration: 0.6 }}
+      >
+        <a
+          href="https://github.com/srisiddhardhakurra26"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-btn"
+          aria-label="GitHub"
+        >
+          <i className="fab fa-github" />
+        </a>
+        <a
+          href="https://linkedin.com/in/srisiddhardhakurra"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-btn"
+          aria-label="LinkedIn"
+        >
+          <i className="fab fa-linkedin-in" />
+        </a>
+        <a
+          href="mailto:srisiddhardhakurra@gmail.com"
+          className="social-btn"
+          aria-label="Email"
+        >
+          <i className="fas fa-envelope" />
+        </a>
+      </motion.div>
 
       {chatTrigger && (
         <div className="chat-trigger-region">
           {chatTrigger}
         </div>
       )}
-      
+
+      {/* Animated scroll indicator */}
+      <motion.div
+        className="scroll-down-indicator"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.8, duration: 0.6 }}
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <i className="fas fa-chevron-down" />
+        </motion.div>
+      </motion.div>
+
       <YellowPath bottom="5%" />
     </motion.div>
   );

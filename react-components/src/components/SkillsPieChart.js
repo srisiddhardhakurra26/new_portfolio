@@ -4,8 +4,9 @@ import './SkillsPieChart.css';
 
 const SkillsPieChart = () => {
   const skillData = [
-    { name: 'Backend Developer', value: 0.6, color: '#FFD700' },
-    { name: 'Frontend Developer', value: 0.4, color: '#B8860B' }
+    { name: 'AI & Data Engineer', value: 0.55, color: '#FFD700' },
+    { name: 'Backend Engineer', value: 0.3, color: '#B8860B' },
+    { name: 'Frontend Engineer', value: 0.15, color: '#DAA520' }
   ];
 
   return (

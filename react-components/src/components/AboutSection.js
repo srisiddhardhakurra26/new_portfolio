@@ -63,44 +63,41 @@ const AboutSection = () => {
           About Me
         </motion.h2>
         
-        <motion.p 
+        <motion.p
           className="about-text"
           variants={itemVariants}
         >
-          Software Engineer with 3+ years of experience in designing, developing, and deploying high-performance applications in AI/ML, enterprise AI, finance, and healthcare sectors. Proficient in Python, JavaScript, TypeScript, Java, and SQL, with expertise in frameworks like Spring Boot, FastAPI, React, and LangGraph. Skilled in designing RAG pipelines, Agentic AI systems, database management (PostgreSQL, MongoDB, Oracle), and cloud services (AWS, Azure). Adept at containerization with Docker, real-time data processing using Apache Kafka, and implementing AI workflows for intelligent query processing. Passionate about collaborating with cross-functional teams to deliver user-friendly solutions, optimize system performance, and drive AI/ML projects from concept to deployment.
+          Full Stack AI &amp; Data Engineer with ~5 years of experience specializing in AI/ML applications, data engineering, and cloud infrastructure automation. Proven expertise building production-grade ETL pipelines using Apache Spark and Databricks on AWS, architecting HIPAA-compliant Delta Lake solutions, and deploying GenAI systems using AWS Bedrock agents, RAG pipelines, and foundation models (Claude, Titan, Llama). Proficient in PySpark, Snowflake, Airflow, and ML feature engineering. Strong background in Infrastructure as Code (Terraform), CI/CD automation, and modern web technologies (React.js, Node.js, Python).
         </motion.p>
 
-        <motion.h3 
+        <motion.h3
           className="accomplishments-title"
           variants={itemVariants}
         >
           Key Accomplishments
         </motion.h3>
 
-        <motion.ul 
+        <motion.ul
           className="accomplishments-list"
           variants={containerVariants}
         >
           <motion.li variants={itemVariants}>
-            🚀 Contributed to the development of an Agentic GenAI system at C3.ai using RAG pipelines, enhancing response accuracy for enterprise applications.
+            🤖 Architected GenAI agentic systems at C3.ai using RAG pipelines, LangGraph, and AWS Bedrock — deployed 20+ enterprise AI demo applications end-to-end.
           </motion.li>
           <motion.li variants={itemVariants}>
-            💻 Created responsive and dynamic front-end interfaces with React.js, enhancing user experience in financial and healthcare sectors.
+            📊 Drove 10% MAE reduction on an XGBoost churn model at Salesforce by engineering multi-source Snowflake features and integrating SHAP explainability for business stakeholders.
           </motion.li>
           <motion.li variants={itemVariants}>
-            🛠️ Implemented data streaming solutions using Apache Kafka for real-time decision-making in healthcare systems.
+            🏗️ Designed a 6-layer financial data platform on Databricks, Delta Lake, and Unity Catalog at FactSet — including fiscal period resolution UDFs across 8.5M+ rows.
           </motion.li>
           <motion.li variants={itemVariants}>
-            ☁️ Deployed and managed scalable applications on Azure, leveraging cloud services for improved performance and reliability.
+            🔒 Built real-time LLM guardrails with RoBERTa-based toxicity detection and a PII masking pipeline using NER models, reducing harmful content exposure by 98%.
           </motion.li>
           <motion.li variants={itemVariants}>
-            🐳 Gained proficiency in Docker and Git, optimizing software deployment and version control processes.
+            ⚡ Migrated healthcare ETL to Databricks on AWS using PySpark + Apache Kafka, processing 50K+ daily records into Delta Lake with significantly reduced latency.
           </motion.li>
           <motion.li variants={itemVariants}>
-            🔄 Collaborated within Agile frameworks, ensuring timely delivery and continuous improvement of software solutions.
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            🧪 Conducted comprehensive QA testing and automated unit tests at C3.ai, identifying issues and enabling on-time releases.
+            ☁️ Automated HIPAA-compliant infrastructure across AWS (ECS, RDS, VPC) using Terraform IaC modules, standardizing security policies across dev/staging/prod.
           </motion.li>
         </motion.ul>
       </motion.div>

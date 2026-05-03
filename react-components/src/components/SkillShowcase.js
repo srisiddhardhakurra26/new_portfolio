@@ -6,14 +6,18 @@ const skills = [
   { name: 'JavaScript', icon: 'fab fa-js-square' },
   { name: 'TypeScript', icon: 'fab fa-js-square' },
   { name: 'RAG Pipelines', icon: 'fas fa-brain' },
-  { name: 'GenAI', icon: 'fas fa-robot' },
-  { name: 'LangChain', icon: 'fas fa-link' },
+  { name: 'AWS Bedrock', icon: 'fab fa-aws' },
   { name: 'LangGraph', icon: 'fas fa-project-diagram' },
+  { name: 'PySpark / Databricks', icon: 'fas fa-bolt' },
+  { name: 'Snowflake', icon: 'fas fa-snowflake' },
+  { name: 'Apache Kafka', icon: 'fas fa-stream' },
+  { name: 'Airflow', icon: 'fas fa-wind' },
   { name: 'React', icon: 'fab fa-react' },
   { name: 'FastAPI', icon: 'fas fa-rocket' },
   { name: 'PostgreSQL', icon: 'fas fa-database' },
+  { name: 'Terraform', icon: 'fas fa-cubes' },
+  { name: 'Docker / Kubernetes', icon: 'fab fa-docker' },
   { name: 'AWS', icon: 'fab fa-aws' },
-  { name: 'Docker', icon: 'fab fa-docker' },
 ];
 
 const SkillShowcase = () => {

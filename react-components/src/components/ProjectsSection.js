@@ -3,6 +3,11 @@ import './ProjectSection.css';
 
 const projects = [
   {
+    title: "AI Sales Automation & Conversion Funnel Pipeline",
+    tech: "Python, FastAPI, LLM, Streamlit, Google Sheets",
+    description: "Built an inbound LLM voice agent to automate sales and multi-round rate negotiations. Engineered a FastAPI pipeline to extract and stream sentiment data to Google Sheets. Developed a Streamlit dashboard to track real-time revenue metrics and funnel performance."
+  },
+  {
     title: "Online Quiz System",
     tech: "Spring Boot, React, MongoDB Atlas, JWT, Material-UI",
     description: "Architected a full-stack quiz platform enabling user-driven quiz creation and participation, with secure JWT authentication. Implemented efficient MongoDB indexing for sub-100ms quiz retrieval times. Features real-time scoring, progress tracking, and comprehensive error handling.",
@@ -11,8 +16,8 @@ const projects = [
   {
     title: "Quotivation Station",
     tech: "React, JavaScript, Express, MongoDB Atlas, Node.js, Docker",
-    description: "A user-friendly web app with 1000+ users, lauded for innovative image generation and quote sharing features. Containerized with Docker Compose for scalable architecture. Implemented compound indexing and LRU caching for improved performance.",
-    link: "www.siddhardhakurra.com"
+    description: "A user-friendly web app with 1000+ users, lauded for innovative image generation and quote sharing features. Containerized with Docker Compose for scalable architecture. Implemented compound indexing and LRU caching for a 25% reduction in feed retrieval latency.",
+    link: "https://www.siddhardhakurra.com"
   },
   {
     title: "TimeVault App",
@@ -22,12 +27,12 @@ const projects = [
   {
     title: "Inventory System",
     tech: "Java, J2EE, JPA, JAX-RS, CDI, JSP, JMS, WebSockets, Threads",
-    description: "Introduced lazy loading, Trie-based indexing, real-time chat via WebSockets, and thread pooling for improved performance and efficiency in inventory management."
+    description: "Introduced lazy loading, Trie-based indexing for 25% faster product search, real-time chat via WebSockets cutting issue resolution by 15%, and thread pooling slashing update duration by 40%."
   },
   {
     title: "Real-Time Collaborative Text Editor",
-    tech: "C++, WebSocket, CRDT Algorithm, Git, STL, Qt",
-    description: "Built a real-time collaborative text editor using C++, Qt, and WebSocket protocol with CRDT algorithm for conflict-free concurrent editing. Optimized performance and UI with STL containers, algorithms, modern C++ features, and Qt GUI widgets."
+    tech: "C++, WebSocket, CRDT Algorithm, STL, Qt",
+    description: "Built a real-time collaborative text editor using C++, Qt, and WebSocket protocol with CRDT algorithm for conflict-free concurrent editing. Optimized with STL containers and modern C++ features."
   }
 ];
 
