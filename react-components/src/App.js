@@ -6,6 +6,7 @@ import AnimatedIntro from './components/AnimatedIntro';
 import SkillShowcase from './components/SkillShowcase';
 import ParticleBackground from './components/ParticleBackground';
 // import Resume from './components/Resume.js';
+import ExperienceTimeline from './components/ExperienceTimeline';
 import Contact from './components/Contact.js';
 import ProjectsSection from './components/ProjectsSection.js';
 import DownloadButtons from './components/StylishButton.js';
@@ -77,6 +78,7 @@ function App() {
               <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
               <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
               <li className="nav-item"><a className="nav-link" href="#skills">Skills</a></li>
+              <li className="nav-item"><a className="nav-link" href="#experience">Experience</a></li>
               {/* <li className="nav-item"><a className="nav-link" href="#resume">Resume</a></li> */}
               <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
               <li className="nav-item"><a className="nav-link" href="https://sid-kurra.hashnode.dev/newsletter">Blog</a></li>
@@ -95,6 +97,10 @@ function App() {
 
       <section id="about" className="section">
         <AboutSection />
+      </section>
+
+      <section id="experience" className="section">
+        <ExperienceTimeline />
       </section>
 
       <section id="skills-distribution" className="section" style={{

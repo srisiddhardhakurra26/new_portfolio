@@ -89,7 +89,7 @@ const AnimatedIntro = ({ chatTrigger }) => {
           <i className="fab fa-github" />
         </a>
         <a
-          href="https://linkedin.com/in/srisiddhardhakurra"
+          href="https://www.linkedin.com/in/sid-k-339962319/"
           target="_blank"
           rel="noopener noreferrer"
           className="social-btn"
