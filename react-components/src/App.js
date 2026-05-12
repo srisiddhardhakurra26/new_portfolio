@@ -5,7 +5,7 @@ import SkillsPieChart from './components/SkillsPieChart';
 import AnimatedIntro from './components/AnimatedIntro';
 import SkillShowcase from './components/SkillShowcase';
 import ParticleBackground from './components/ParticleBackground';
-import Resume from './components/Resume.js';
+// import Resume from './components/Resume.js';
 import Contact from './components/Contact.js';
 import ProjectsSection from './components/ProjectsSection.js';
 import DownloadButtons from './components/StylishButton.js';
@@ -77,7 +77,7 @@ function App() {
               <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
               <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
               <li className="nav-item"><a className="nav-link" href="#skills">Skills</a></li>
-              <li className="nav-item"><a className="nav-link" href="#resume">Resume</a></li>
+              {/* <li className="nav-item"><a className="nav-link" href="#resume">Resume</a></li> */}
               <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
               <li className="nav-item"><a className="nav-link" href="https://sid-kurra.hashnode.dev/newsletter">Blog</a></li>
             </ul>
@@ -119,21 +119,17 @@ function App() {
         </div>
       </section>
 
-      <section id="resume" className="section mt-5">
+      {/* <section id="resume" className="section mt-5">
         <div className="container d-flex flex-column align-items-center">
           <h2>Resume</h2>
           <div className="mt-3">
             <DownloadButtons />
           </div>
-          {/* <div className="mt-3">
-            <a href="/Sri Siddhardha Kurra_Software Development Engineer.pdf" className="btn btn-primary me-2" download>Download PDF</a>
-            <a href="/Sri Siddhardha Kurra_Software Development Engineer (1).docx" className="btn btn-secondary" download>Download Word</a>
-          </div> */}
           <div className="resume-container">
             <Resume content={resumeContent} />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="contact" className="section">
         <div className="container">
