@@ -3,6 +3,17 @@ import './ProjectSection.css';
 
 const projects = [
   {
+    title: "Scour — AI Product Discovery & Price Comparison",
+    tech: "Next.js, React, TypeScript, Prisma, SQLite, Hugging Face Transformers, Groq/Gemini LLM, Playwright, Docker",
+    description: "A product discovery engine that searches every store at once, clusters the same product across sellers using local text embeddings, and runs an LLM retrieve-rerank pass to surface only true-intent matches. Deployed with Docker, automatic HTTPS, and push-to-deploy CI.",
+    link: "https://167-234-217-97.sslip.io",
+    caseStudy: {
+      problem: "Comparison shopping means re-running the same query on every retailer and manually matching results — and keyword search makes it worse by returning category matches that ignore the attributes you actually asked for, like a \"leather shoes\" search surfacing non-leather sneakers.",
+      solution: "Built a full-stack engine that fans out one query across many retailers in parallel (Amazon, eBay, Etsy, Shopify storefronts, Reddit, Slickdeals), clusters identical products across sellers with local Hugging Face embeddings, and applies a two-stage retrieve-then-rerank pipeline where an LLM scores each candidate on true intent (product type and required attributes) to drop off-target results. A streaming Suspense UI renders results progressively so a slow or dead source never blocks the page.",
+      impact: "Embeddings run in-process with no per-query API cost, and the LLM rerank measurably sharpened relevance (e.g. filtering non-leather results out of a \"leather shoes\" query). Shipped to production on a cloud VM via Docker Compose with automatic HTTPS and a GitHub Actions push-to-deploy pipeline."
+    }
+  },
+  {
     title: "AI Sales Automation & Conversion Funnel Pipeline",
     tech: "Python, FastAPI, LLM, Streamlit, Google Sheets",
     description: "Built an inbound LLM voice agent to automate sales and multi-round rate negotiations. Engineered a FastAPI pipeline to extract and stream sentiment data to Google Sheets.",
